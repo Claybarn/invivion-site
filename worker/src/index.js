@@ -99,7 +99,10 @@ async function verifyTurnstile(env, token, request, action) {
   if (ip) form.append("remoteip", ip);
 
   const res = await fetch(SITEVERIFY, { method: "POST", body: form });
-  if (!res.ok) return false;
+  if (!res.ok) {
+    console.warn("turnstile siteverify failed", res.status, await res.text());
+    return false;
+  }
   const outcome = await res.json();
   if (!outcome.success) {
     console.warn("turnstile rejected", outcome["error-codes"]);
