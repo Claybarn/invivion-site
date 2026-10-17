@@ -12,6 +12,7 @@
       const id = window.turnstile.render(el, {
         sitekey: config.turnstileSiteKey,
         theme: "light",
+        size: "flexible",
         appearance: "interaction-only",
         action: form.dataset.endpoint.slice(1),
       });

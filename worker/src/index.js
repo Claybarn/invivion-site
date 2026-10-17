@@ -101,12 +101,21 @@ async function verifyTurnstile(env, token, request, action) {
   const res = await fetch(SITEVERIFY, { method: "POST", body: form });
   if (!res.ok) return false;
   const outcome = await res.json();
-  if (!outcome.success) return false;
+  if (!outcome.success) {
+    console.warn("turnstile rejected", outcome["error-codes"]);
+    return false;
+  }
 
   // Test keys report hostname "example.com" and no action; real keys must match.
   const hostnames = list(env.TURNSTILE_HOSTNAMES);
-  if (hostnames.length && !hostnames.includes(outcome.hostname)) return false;
-  if (outcome.action && outcome.action !== action) return false;
+  if (hostnames.length && !hostnames.includes(outcome.hostname)) {
+    console.warn("turnstile hostname mismatch", outcome.hostname);
+    return false;
+  }
+  if (outcome.action && outcome.action !== action) {
+    console.warn("turnstile action mismatch", outcome.action, action);
+    return false;
+  }
   return true;
 }
 
