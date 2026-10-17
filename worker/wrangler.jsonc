@@ -12,7 +12,7 @@
   "vars": {
     "ALLOWED_ORIGINS": "https://invivion.bio,https://www.invivion.bio",
     "TURNSTILE_HOSTNAMES": "invivion.bio,www.invivion.bio",
-    "MAIL_FROM": "Invivion <hello@invivion.bio>",
+    "MAIL_FROM": "Invivion Website <forms@invivion.bio>",
     "CONTACT_TO": "hello@invivion.bio",
     // Resend segment ID for the mailing list (Resend → Audience → Segments).
     // Leave empty to add subscribers as plain contacts.
