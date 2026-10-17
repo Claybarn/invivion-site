@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <circle cx="16" cy="16" r="13" fill="#fff" stroke="#287E95" stroke-width="2.4"/>
-  <path d="M5 19 C 10 11, 14 11, 16 16 S 22 21, 27 13" fill="none" stroke="#4FC3DC" stroke-width="2.4" stroke-linecap="round"/>
-  <circle cx="16" cy="16" r="3.4" fill="#C14E9A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <style>.skin { stroke: #111418; } @media (prefers-color-scheme: dark) { .skin { stroke: #ffffff; } }</style>
+  <line x1="10" y1="7.5" x2="24" y2="40.5" stroke="#4FC3DC" stroke-width="4.4" stroke-linecap="round"/>
+  <line class="skin" x1="7" y1="21.5" x2="41" y2="21.5" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="38" y1="7.5" x2="24" y2="40.5" stroke="#C14E9A" stroke-width="4.4" stroke-linecap="round"/>
 </svg>

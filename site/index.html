@@ -11,8 +11,13 @@
   <meta property="og:url" content="https://invivion.bio/">
   <meta property="og:title" content="Invivion">
   <meta property="og:description" content="Molecular intelligence for everyday life.">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://invivion.bio/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -54,7 +59,7 @@
 
   <header class="top">
     <a class="brand" href="/" aria-label="Invivion home">
-      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#mark"/></svg>
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark"/></svg>
       <span>Invivion</span>
     </a>
     <a class="top__link" href="#contact">Contact</a>
@@ -117,10 +122,11 @@
   </footer>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="mark" viewBox="0 0 32 32">
-      <circle cx="16" cy="16" r="13" fill="none" stroke="#287E95" stroke-width="2.4"/>
-      <path d="M5 19 C 10 11, 14 11, 16 16 S 22 21, 27 13" fill="none" stroke="#4FC3DC" stroke-width="2.4" stroke-linecap="round"/>
-      <circle cx="16" cy="16" r="3.4" fill="#C14E9A"/>
+    <!-- ∀ mark: cyan excitation passes under the skin line, magenta emission comes back over it. -->
+    <symbol id="mark" viewBox="0 0 48 48">
+      <line x1="10" y1="7.5" x2="24" y2="40.5" stroke="#4FC3DC" stroke-width="4.4" stroke-linecap="round"/>
+      <line x1="7" y1="21.5" x2="41" y2="21.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <line x1="38" y1="7.5" x2="24" y2="40.5" stroke="#C14E9A" stroke-width="4.4" stroke-linecap="round"/>
     </symbol>
   </svg>
 </body>
