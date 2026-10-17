@@ -18,12 +18,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Form backend (Cloudflare Worker) and Turnstile site key. Swap the site key
-    // for the real one from the Cloudflare dashboard before going live; the value
-    // below is Cloudflare's always-pass test key.
+    // Form backend (Cloudflare Worker) and public Turnstile site key. For local
+    // testing, use Cloudflare's always-pass test key 1x00000000000000000000AA.
     window.INVIVION = {
       api: "https://api.invivion.bio",
-      turnstileSiteKey: "1x00000000000000000000AA"
+      turnstileSiteKey: "0x4AAAAAAFZZ1iF_EnStAm_W"
     };
   </script>
   <script src="app.js" defer></script>
