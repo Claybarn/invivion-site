@@ -1,0 +1,6 @@
+# Copy to .dev.vars for `npm run dev`. These are Cloudflare's always-pass
+# Turnstile test secret and a placeholder Resend key.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+RESEND_API_KEY=re_xxxxxxxxx
+ALLOWED_ORIGINS=http://localhost:8000
+TURNSTILE_HOSTNAMES=

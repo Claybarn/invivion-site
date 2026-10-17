@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invivion — Molecular intelligence for everyday life</title>
+  <meta name="description" content="Invivion is building a new category of health monitoring: understand your body at the molecular level.">
+  <link rel="canonical" href="https://invivion.bio/">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invivion.bio/">
+  <meta property="og:title" content="Invivion">
+  <meta property="og:description" content="Molecular intelligence for everyday life.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Form backend (Cloudflare Worker) and Turnstile site key. Swap the site key
+    // for the real one from the Cloudflare dashboard before going live; the value
+    // below is Cloudflare's always-pass test key.
+    window.INVIVION = {
+      api: "https://api.invivion.bio",
+      turnstileSiteKey: "1x00000000000000000000AA"
+    };
+  </script>
+  <script src="app.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
+</head>
+<body>
+  <svg class="ribbons" viewBox="0 0 800 900" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="g-cyan" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#4FC3DC" stop-opacity="0"/>
+        <stop offset=".45" stop-color="#4FC3DC" stop-opacity=".38"/>
+        <stop offset="1" stop-color="#287E95" stop-opacity=".12"/>
+      </linearGradient>
+      <linearGradient id="g-pink" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#E07DBE" stop-opacity=".05"/>
+        <stop offset=".5" stop-color="#E07DBE" stop-opacity=".32"/>
+        <stop offset="1" stop-color="#9C477E" stop-opacity=".08"/>
+      </linearGradient>
+    </defs>
+    <g class="ribbon ribbon--pink">
+      <path d="M560 -20 C 690 160, 760 360, 680 560 S 640 860, 760 940 L 840 940 L 840 -20 Z" fill="url(#g-pink)"/>
+      <path d="M640 -20 C 740 180, 820 420, 720 640 S 700 900, 840 940" fill="none" stroke="#E07DBE" stroke-opacity=".35" stroke-width="1.2"/>
+    </g>
+    <g class="ribbon ribbon--cyan">
+      <path d="M180 940 C 360 720, 560 560, 700 360 S 820 80, 860 -20 L 900 -20 L 900 120 C 800 360, 640 620, 360 940 Z" fill="url(#g-cyan)"/>
+      <path d="M260 940 C 430 760, 620 600, 740 420 S 860 140, 900 40" fill="none" stroke="#4FC3DC" stroke-opacity=".45" stroke-width="1.2"/>
+    </g>
+  </svg>
+
+  <header class="top">
+    <a class="brand" href="/" aria-label="Invivion home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#mark"/></svg>
+      <span>Invivion</span>
+    </a>
+    <a class="top__link" href="#contact">Contact</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Molecular intelligence for everyday life</p>
+      <h1>Understand your body<br class="h1-break"> at the <em>molecular</em> level.</h1>
+      <p class="lede">We’re building a new category of health monitoring, so everyday decisions no longer have to be made blind to your own biology.</p>
+
+      <form class="subscribe" data-endpoint="/subscribe" novalidate>
+        <label class="sr-only" for="sub-email">Email address</label>
+        <div class="subscribe__row">
+          <input id="sub-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button type="submit">Follow our progress</button>
+        </div>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="turnstile"></div>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="mission">
+      <p class="mission__label">Our mission</p>
+      <p class="mission__text">Give people control over their own health.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact__intro">
+        <h2>Get in touch</h2>
+        <p>Investors, researchers, and future partners: we’d love to hear from you.</p>
+      </div>
+      <form class="contact__form" data-endpoint="/contact" novalidate>
+        <div class="field">
+          <label for="c-name">Name</label>
+          <input id="c-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+        </div>
+        <div class="field field--wide">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" rows="5" maxlength="5000" required></textarea>
+        </div>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field--wide contact__actions">
+          <div class="turnstile"></div>
+          <button type="submit">Send message</button>
+        </div>
+        <p class="status field--wide" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="year">2026</span> Invivion</span>
+    <span>invivion.bio</span>
+  </footer>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="13" fill="none" stroke="#287E95" stroke-width="2.4"/>
+      <path d="M5 19 C 10 11, 14 11, 16 16 S 22 21, 27 13" fill="none" stroke="#4FC3DC" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="16" cy="16" r="3.4" fill="#C14E9A"/>
+    </symbol>
+  </svg>
+</body>
+</html>

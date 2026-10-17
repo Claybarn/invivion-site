@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "invivion-forms",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "observability": { "enabled": true },
+
+  // Serves the API at https://api.invivion.bio. Requires the invivion.bio zone
+  // to be on Cloudflare; Wrangler creates the DNS record on deploy.
+  "routes": [{ "pattern": "api.invivion.bio", "custom_domain": true }],
+
+  "vars": {
+    "ALLOWED_ORIGINS": "https://invivion.bio,https://www.invivion.bio",
+    "TURNSTILE_HOSTNAMES": "invivion.bio,www.invivion.bio",
+    "MAIL_FROM": "Invivion <hello@invivion.bio>",
+    "CONTACT_TO": "hello@invivion.bio",
+    // Resend segment ID for the mailing list (Resend → Audience → Segments).
+    // Leave empty to add subscribers as plain contacts.
+    "RESEND_SEGMENT_ID": ""
+  }
+
+  // Secrets (set with `npx wrangler secret put <NAME>`):
+  //   TURNSTILE_SECRET  Turnstile widget secret key
+  //   RESEND_API_KEY    Resend API key with sending + contacts access
+}
