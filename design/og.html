@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+  Source for site/og.png (1200x630 social preview). Re-render with:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+    --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=8000 \
+    --screenshot=site/og.png "file://$PWD/design/og.html"
+-->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  html, body { margin:0; width:1200px; height:630px; overflow:hidden; background:#fff; }
+  body { font-family: Manrope, Arial, sans-serif; color:#111418; position:relative; }
+  .ribbons { position:absolute; right:0; top:0; width:640px; height:630px; }
+  .content { position:absolute; left:96px; top:0; bottom:0; display:flex; flex-direction:column; justify-content:center; width:820px; }
+  .brand { display:flex; align-items:center; gap:22px; font-weight:800; font-size:60px; letter-spacing:-.02em; }
+  .brand svg { width:78px; height:78px; }
+  .eyebrow { margin-top:44px; font-size:22px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#287E95; }
+  h1 { margin:14px 0 0; font-size:78px; line-height:1.04; letter-spacing:-.035em; font-weight:800; }
+  em { font-style:normal; background:linear-gradient(100deg,#287E95 0%,#4FC3DC 45%,#E07DBE 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .url { margin-top:32px; font-size:26px; font-weight:500; color:#59646C; }
+</style></head>
+<body>
+  <svg class="ribbons" viewBox="0 0 800 900" preserveAspectRatio="xMaxYMid slice">
+    <defs>
+      <linearGradient id="gc" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4FC3DC" stop-opacity="0"/><stop offset=".45" stop-color="#4FC3DC" stop-opacity=".38"/><stop offset="1" stop-color="#287E95" stop-opacity=".12"/></linearGradient>
+      <linearGradient id="gp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E07DBE" stop-opacity=".05"/><stop offset=".5" stop-color="#E07DBE" stop-opacity=".32"/><stop offset="1" stop-color="#9C477E" stop-opacity=".08"/></linearGradient>
+    </defs>
+    <path d="M560 -20 C 690 160, 760 360, 680 560 S 640 860, 760 940 L 840 940 L 840 -20 Z" fill="url(#gp)"/>
+    <path d="M180 940 C 360 720, 560 560, 700 360 S 820 80, 860 -20 L 900 -20 L 900 120 C 800 360, 640 620, 360 940 Z" fill="url(#gc)"/>
+  </svg>
+  <div class="content">
+    <div class="brand">
+      <svg viewBox="0 0 48 48">
+        <line x1="10" y1="7.5" x2="24" y2="40.5" stroke="#4FC3DC" stroke-width="4.4" stroke-linecap="round"/>
+        <line x1="7" y1="21.5" x2="41" y2="21.5" stroke="#111418" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="38" y1="7.5" x2="24" y2="40.5" stroke="#C14E9A" stroke-width="4.4" stroke-linecap="round"/>
+      </svg>
+      Invivion
+    </div>
+    <div class="eyebrow">Next-generation in vivo diagnostics</div>
+    <h1>See what today’s<br>tests <em>can’t</em>.</h1>
+    <div class="url">invivion.bio</div>
+  </div>
+</body></html>
